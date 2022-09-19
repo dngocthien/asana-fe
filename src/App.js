@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Main from "./components/main/Main";
+import SideBar from "./components/sidebar/SideBar";
 
 function App() {
+  const [menu, setMenu] = useState(true);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="navbar ">
+        <div className="navbar-menu" onClick={() => setMenu(!menu)}>
+          <div className="navbar-menu-i"></div>
+          <div className="navbar-menu-i"></div>
+          <div className="navbar-menu-i"></div>
+        </div>
+        <div className="navbar-brand">asana</div>
+      </div>
+      {menu ? <SideBar /> : <></>}
+
+      <div className={menu ? "sidebar-ml" : ""}>
+        <Main />
+      </div>
     </div>
   );
 }

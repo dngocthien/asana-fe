@@ -1,0 +1,36 @@
+.sidebar{
+    position: fixed;
+    top: 4rem;
+    background-color: var(--black);
+    width: 15rem;
+    height: 100vh;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 18px;
+
+}
+.sidebar-ml{
+    margin-left: 15rem;
+}
+
+.sidebar-header{
+    padding: 0 1rem;
+}
+
+.project{
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.project:hover{
+    background-color: var(--black3);
+}
+.project input:focus{
+    outline-width: 0;
+}
+.project-dot{
+    background-color: var(--cyan);
+    border-radius: 5px;
+    width: 12px;
+    height: 12px;
+    margin-right: 0.5rem;
+}
