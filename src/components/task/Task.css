@@ -3,11 +3,11 @@
 }
 
 .dropdown{
+    position: relative;
     cursor: pointer;
     font-size: 16px;
-    line-height: 12px;
     margin-right: 0.5rem;
-    padding: 7px;
+    padding: 15px;
     justify-content: center;
     align-items: center;
     color: var(--gray);
@@ -17,11 +17,121 @@
     background-color: var(--light2);
     border-radius: 5px;
 }
+.arrow-down{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    margin-left: -2px;
+    border-width: 6px;
+    border-style: solid;
+    border-color:  var(--gray) transparent transparent transparent;
+}
+.arrow-down:hover{
+    border-color:  var(--black) transparent transparent transparent;
+}
+.arrow-right{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    margin-left: 0px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--gray);
+}
+.arrow-right:hover{
+    border-color: transparent transparent transparent var(--black);
+}
 
-.task-list{
-    border-top: 0.5px solid var(--black3);
+.arrow-stretched{
+    font-size:24px;
+    transform: scale(.4, 1);
+    padding-bottom: 2px;
 }
+
+.group-list{
+    border-top: 0.5px solid var(--light);
+}
+
 .task{
-    border-bottom: 0.5px solid var(--black3);
-    padding: 0.5rem 0;
+    border-bottom: 0.5px solid var(--light);
+    padding: 0.5rem 0.5rem 0.5rem 4rem;
+    line-height: 26px;
+    position: relative;
+    align-items: center;
 }
+.task:hover{
+    background-color: var(--light3);
+    cursor: pointer;
+}
+.task-tick{
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 5px;
+}
+.task-tick-incomplete{
+    color: var(--light);
+    border: 1px solid var(--light);
+}
+.task-tick-incomplete:hover{
+    color: var(--green);
+    border-color: var(--green);
+    cursor: pointer;
+}
+.task-tick-complete{
+    color: var(--white);
+    background-color: var(--green1);
+}
+.task-tick-complete:hover{
+    background-color: var(--green);
+    cursor: pointer;
+}
+
+.input-hover{
+    width: auto;
+    font-size: 18px;
+    line-height: 24px;
+    outline: none;
+    border: none;
+    padding: 0 0.5rem;
+    border: 1px solid transparent;
+}
+.task:hover .input-hover{
+    border: 1px solid var(--light);
+    border-radius: 3px;
+}
+
+.task-move{
+    position: relative;
+    padding: 6px 15px 2px 7px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: transparent;
+}
+.task-move-i{
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.task:hover .task-move{
+    color: var(--black);
+}
+.focus .task-move{
+    color: var(--black);
+}
+.task-move:hover{
+    background-color: var(--light2);
+}
+
+.task-btn-details{
+    color: transparent;
+    padding: 0 0.5rem ;
+    border-radius: 15px;
+}
+.task:hover .task-btn-details{
+    color: var(--black);
+}
+.task-btn-details:hover{
+    background-color: var(--light2);
+}
+
