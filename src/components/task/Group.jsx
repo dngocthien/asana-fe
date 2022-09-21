@@ -1,14 +1,25 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import Task from "./Task";
 import "./Task.css";
 
 const Group = ({ group }) => {
+  const dispatch = useDispatch();
   const [down, setDown] = useState(true);
   const [add, setAdd] = useState(false);
-  const newTask = { name: "", complete: false };
+  const newTask = {
+    id: null,
+    name: "",
+    complete: false,
+    group: group.id,
+  };
+
+  const cancel = () => {
+    setAdd(false);
+  };
   return (
     <div className="group">
-      <div className="flex pl-2">
+      <div className="group-header flex pl-2">
         <div className="dropdown" onClick={() => setDown(!down)}>
           {down ? (
             <div className="arrow-down" />
@@ -16,22 +27,37 @@ const Group = ({ group }) => {
             <div className="arrow-right" />
           )}
         </div>
+
         <h3 className="mr-1">{group.title}</h3>
-        <button className="btn-hover">+</button>
+
+        <div className="group-utilities flex">
+          <button className="btn-hover mr-1">+</button>
+          <button className="btn-hover mb-07">&#8230;</button>
+        </div>
       </div>
 
-      <div className={down ? "group-list" : ""}>
-        {down &&
-          group.tasks.map((t, i) => {
-            return <Task key={i} task={t} fc={"n"} />;
+      {down && (
+        <div className="group-tasks">
+          {group.tasks.map((t, i) => {
+            return (
+              <Task key={i} task={t} focus={false} cancelAdd={() => cancel()} />
+            );
           })}
-      </div>
 
-      {add && <Task task={newTask} />}
+          {add && (
+            <Task task={newTask} focus={true} cancelAdd={() => cancel()} />
+          )}
 
-      <div className="task" onClick={() => setAdd(!add)}>
-        <div className="ml-3 txt-gray">Add task...</div>
-      </div>
+          <div
+            className="task task-add"
+            onClick={() => (
+              setAdd(!add), dispatch({ type: "CURRENT", current: null })
+            )}
+          >
+            <div className="txt-gray ml-2 py-q">Add task...</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

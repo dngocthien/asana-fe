@@ -1,3 +1,8 @@
+.mb-07{
+  padding-bottom: 1rem;
+}
+
+
 .group{
     color: var(--black);
 }
@@ -42,19 +47,20 @@
     border-color: transparent transparent transparent var(--black);
 }
 
-.arrow-stretched{
-    font-size:24px;
-    transform: scale(.4, 1);
-    padding-bottom: 2px;
+.group-utilities{
+    display: none;
+}
+.group-header:hover .group-utilities{
+    display: flex;
 }
 
-.group-list{
+.group-tasks{
     border-top: 0.5px solid var(--light);
 }
 
 .task{
     border-bottom: 0.5px solid var(--light);
-    padding: 0.5rem 0.5rem 0.5rem 4rem;
+    padding: 0.25rem 0.5rem 0.25rem 4rem;
     line-height: 26px;
     position: relative;
     align-items: center;
@@ -63,11 +69,18 @@
     background-color: var(--light3);
     cursor: pointer;
 }
+.current .task{
+    background-color: var(--light-blue);
+}
+
 .task-tick{
     border-radius: 30px;
     font-size: 10px;
     font-weight: 700;
-    padding: 4px 5px;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    line-height: 18px;
 }
 .task-tick-incomplete{
     color: var(--light);
@@ -81,6 +94,7 @@
 .task-tick-complete{
     color: var(--white);
     background-color: var(--green1);
+    border: 1px solid var(--green1);
 }
 .task-tick-complete:hover{
     background-color: var(--green);
@@ -89,16 +103,18 @@
 
 .input-hover{
     width: auto;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
     outline: none;
     border: none;
     padding: 0 0.5rem;
     border: 1px solid transparent;
+    background-color: transparent;
 }
 .task:hover .input-hover{
     border: 1px solid var(--light);
     border-radius: 3px;
+    background-color: var(--white);
 }
 
 .task-move{
@@ -113,10 +129,7 @@
     top: 0;
     right: 10px;
 }
-.task:hover .task-move{
-    color: var(--black);
-}
-.focus .task-move{
+.task:hover .task-move, .current .task-move{
     color: var(--black);
 }
 .task-move:hover{
@@ -128,10 +141,19 @@
     padding: 0 0.5rem ;
     border-radius: 15px;
 }
-.task:hover .task-btn-details{
+.task:hover .task-btn-details, .current .task-btn-details{
     color: var(--black);
 }
 .task-btn-details:hover{
     background-color: var(--light2);
+}
+.arrow-stretched{
+    font-size:24px;
+    transform: scale(.4, 1);
+    padding-bottom: 2px;
+}
+
+.task-add{
+    border: none;
 }
 

@@ -5,6 +5,7 @@ import SideBar from "./components/sidebar/SideBar";
 
 function App() {
   const [menu, setMenu] = useState(true);
+
   return (
     <div className="App">
       <div className="navbar ">

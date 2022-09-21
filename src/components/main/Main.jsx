@@ -6,16 +6,18 @@ const Main = () => {
   const data_groups = [
     {
       title: "task group 1",
+      id: 1,
       tasks: [
-        { name: "task a", complete: false },
-        { name: "task b", complete: false },
+        { id: 1, name: "task a", complete: false, group: 1 },
+        { id: 2, name: "task b", complete: false, group: 1 },
       ],
     },
     {
       title: "task group 2",
+      id: 2,
       tasks: [
-        { name: "task 1", complete: true },
-        { name: "task 2", complete: false },
+        { id: 3, name: "task 1", complete: true, group: 2 },
+        { id: 4, name: "task 2", complete: false, group: 2 },
       ],
     },
   ];

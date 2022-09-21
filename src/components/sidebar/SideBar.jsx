@@ -31,6 +31,7 @@ const SideBar = () => {
         <div className="project">
           <input
             type="text"
+            autoFocus
             onChange={(e) => setProject(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
