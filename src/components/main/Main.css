@@ -1,4 +1,11 @@
 .main{
-    padding: 4rem 0;
+    padding-top: 3rem;
     position: relative;
+    min-height: 95vh;
+}
+
+.project-tasks{
+    flex: 1;
+    padding-top: 1.5rem;
+    overflow: scroll;
 }

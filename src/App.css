@@ -7,6 +7,9 @@
   display: flex;
   align-items: center;
 }
+.flex-basic{
+  display: flex;
+}
 .space-between{
   display: flex;
   justify-content: space-between;
@@ -15,6 +18,9 @@
 .baseline{
   display: flex;
   justify-content: baseline;
+}
+.full{
+  flex: 1;
 }
 
 .mr-0{
@@ -44,8 +50,20 @@
 .pl-2{
   padding-left: 2rem;
 }
+.pb-0{
+  margin-bottom: 0.7rem;
+}
+.pb-1{
+  margin-bottom: 1rem;
+}
 .py-q{
   padding: 0.25rem 0;
+}
+.py-0{
+  padding: 0.5rem 0;
+}
+.py-1{
+  padding: 1rem 0;
 }
 
 .txt-gray{
@@ -80,6 +98,40 @@
 .btn-hover:hover{
   background-color: var(--light3);
   color: var(--black);
+  border-radius: 5px;
+}
+
+.btn-border{
+  background-color: var(--white);
+  border: 0.5px solid var(--gray);
+  color: var(--black);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 8px;
+}
+.btn-border:hover{
+  background-color: var(--green2);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.btn-border-green{
+  background-color: var(--green2);
+  border: 0.5px solid var(--green);
+  border-radius: 5px;
+  color: var(--green);
+  cursor: pointer;
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 8px;
+}
+
+.hr{
+  border-bottom: 0.5px solid var(--light);
 }
 
 .App{

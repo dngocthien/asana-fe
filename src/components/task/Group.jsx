@@ -32,7 +32,9 @@ const Group = ({ group }) => {
 
         <div className="group-utilities flex">
           <button className="btn-hover mr-1">+</button>
-          <button className="btn-hover mb-07">&#8230;</button>
+          <button className="btn-hover">
+            <div className="pb-0">&#8230;</div>
+          </button>
         </div>
       </div>
 

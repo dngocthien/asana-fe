@@ -15,12 +15,14 @@ const Task = (props) => {
     }
   };
 
+  const goDetails = () => {
+    dispatch({ type: "CURRENT", current: task.id });
+    dispatch({ type: "DETAILS", details: true });
+  };
+
   return (
     <div className={task.id === current ? "current" : ""}>
-      <div
-        className="task space-between"
-        onClick={() => dispatch({ type: "CURRENT", current: task.id })}
-      >
+      <div className="task space-between" onClick={() => goDetails()}>
         <div className="flex">
           {task.complete ? (
             <div className="task-tick task-tick-complete mr-0 tooltip">
