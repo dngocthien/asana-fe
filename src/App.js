@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { fetchProjects } from "./api/projects";
 import "./App.css";
 import Main from "./components/main/Main";
 import SideBar from "./components/sidebar/SideBar";
 
 function App() {
   const [menu, setMenu] = useState(true);
+  const [projects, setProjects] = useState([]);
+
+  const refresh = () => {
+    fetchProjects().then((res) => setProjects(res));
+  };
+
+  useEffect(() => {
+    fetchProjects().then((res) => setProjects(res));
+  }, []);
 
   return (
     <div className="App">
@@ -16,7 +26,7 @@ function App() {
         </div>
         <div className="navbar-brand">asana</div>
       </div>
-      {menu ? <SideBar /> : <></>}
+      {menu ? <SideBar projects={projects} refresh={() => refresh()} /> : <></>}
 
       <div className={menu ? "sidebar-ml" : ""}>
         <Main />

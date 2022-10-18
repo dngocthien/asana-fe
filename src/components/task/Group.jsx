@@ -31,8 +31,8 @@ const Group = ({ group }) => {
         <h3 className="mr-1">{group.title}</h3>
 
         <div className="group-utilities flex">
-          <button className="btn-hover mr-1">+</button>
-          <button className="btn-hover">
+          <button className="btn-symbol mr-1">+</button>
+          <button className="btn-symbol">
             <div className="pb-0">&#8230;</div>
           </button>
         </div>

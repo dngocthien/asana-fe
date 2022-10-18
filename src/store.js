@@ -1,11 +1,28 @@
 import { createStore } from "redux";
 
-const reducer = (state = { current: null, details: false }, action) => {
+const reducer = (
+  state = { project: null, task: null, details: false },
+  action
+) => {
   switch (action.type) {
+    case "PROJECT":
+      return {
+        project: action.project,
+        task: state.task,
+        details: state.details,
+      };
     case "CURRENT":
-      return { current: action.current, details: state.details };
+      return {
+        project: state.project,
+        task: action.task,
+        details: state.details,
+      };
     case "DETAILS":
-      return { current: state.current, details: action.details };
+      return {
+        project: state.project,
+        task: state.task,
+        details: action.details,
+      };
   }
   return state;
 };

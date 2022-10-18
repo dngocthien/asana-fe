@@ -1,35 +1,49 @@
-.sidebar{
-    position: fixed;
-    top: 3rem;
-    background-color: var(--black);
-    width: 15rem;
-    height: 100vh;
-    color: var(--white);
-    font-weight: 500;
-    font-size: 18px;
+.sidebar {
+  position: fixed;
+  top: 3rem;
+  background-color: var(--black);
+  width: 15rem;
+  height: 100vh;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 18px;
 }
-.sidebar-ml{
-    margin-left: 15rem;
-}
-
-.sidebar-header{
-    padding: 0 1rem;
+.sidebar-ml {
+  margin-left: 15rem;
 }
 
-.project{
-    padding: 0.5rem 1rem;
-    cursor: pointer;
+.sidebar-header {
+  padding: 0 1rem;
 }
-.project:hover{
-    background-color: var(--black3);
+
+.project {
+  padding: 0 1rem;
+  cursor: pointer;
 }
-.project input:focus{
-    outline-width: 0;
+.project:hover {
+  background-color: var(--black3);
 }
-.project-dot{
-    background-color: var(--cyan);
-    border-radius: 5px;
-    width: 12px;
-    height: 12px;
-    margin-right: 0.5rem;
+.project input:focus {
+  outline-width: 0;
+}
+.project-dot {
+  background-color: var(--cyan);
+  border-radius: 5px;
+  width: 12px;
+  height: 12px;
+  margin-right: 0.5rem;
+}
+.project-setting {
+  position: fixed;
+  /* top: 2rem; */
+  z-index: 10;
+  display: block;
+  background-color: yellow;
+  border: 1px solid var(--light2);
+  border-radius: 5px;
+  width: 13rem;
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--black);
+  padding: 0.5rem 1rem;
 }

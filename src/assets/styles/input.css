@@ -1,0 +1,24 @@
+.symbol-input {
+  border: 3px solid var(--blue);
+  border-radius: 5px;
+  justify-content: center;
+  height: 2.5rem;
+  align-items: center;
+  display: flex;
+}
+.symbol-input input:focus {
+  outline-width: 0;
+}
+.symbol-input input {
+  display: flex;
+  border: none;
+  margin-left: 0.5rem;
+  width: 14rem;
+}
+.symbol-input img {
+  border: 1px dashed var(--gray);
+  border-radius: 30px;
+  width: 23px;
+  height: 23px;
+  margin-left: 0.5rem;
+}

@@ -1,143 +1,46 @@
-@import url('./vars.css');
+@import url("./vars.css");
+@import "./assets/styles/button.css";
+@import "./assets/styles/input.css";
+@import "./assets/styles/space.css";
+@import "./assets/styles/tooltip.css";
 
-.relative{
+.relative {
   position: relative;
 }
-.flex{
+.flex {
   display: flex;
   align-items: center;
 }
-.flex-basic{
+.flex-basic {
   display: flex;
 }
-.space-between{
+.space-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.baseline{
+.baseline {
   display: flex;
   justify-content: baseline;
 }
-.full{
+.full {
   flex: 1;
 }
 
-.mr-0{
-  margin-right: 0.5rem;
-}
-.mr-1{
-  margin-right: 1rem;
-}
-.mr-2{
-  margin-right: 2rem;
-}
-.ml-0{
-  margin-left: 0.5rem;
-}
-.ml-1{
-  margin-left: 1rem;
-}
-.ml-2{
-  margin-left: 2rem;
-}
-.ml-3{
-  margin-left: 3rem;
-}
-.pl-1{
-  padding-left: 1rem;
-}
-.pl-2{
-  padding-left: 2rem;
-}
-.pb-0{
-  margin-bottom: 0.7rem;
-}
-.pb-1{
-  margin-bottom: 1rem;
-}
-.py-q{
-  padding: 0.25rem 0;
-}
-.py-0{
-  padding: 0.5rem 0;
-}
-.py-1{
-  padding: 1rem 0;
-}
-
-.txt-gray{
+.txt-gray {
   color: var(--gray);
-  font-size: 16px;
+  font-size: 14px;
 }
 
-.btn-transparent{
-  background-color: transparent;
-  border: none;
-  color: var(--light);
-  font-weight: 700;
-  font-size: 22px;
-  padding: 0;
-  margin-top: 2px;
-  cursor: pointer;
-}
-.btn-transparent:hover{
-  color: var(--white);
-}
-
-.btn-hover{
-  background-color: transparent;
-  border: none;
-  border-radius: 10px;
-  color: var(--gray);
-  font-weight: 700;
-  font-size: 22px;
-  padding: 0.25rem;
-  cursor: pointer;
-}
-.btn-hover:hover{
-  background-color: var(--light3);
-  color: var(--black);
-  border-radius: 5px;
-}
-
-.btn-border{
-  background-color: var(--white);
-  border: 0.5px solid var(--gray);
-  color: var(--black);
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 12px;
-  height: 28px;
-  line-height: 28px;
-  padding: 0 8px;
-}
-.btn-border:hover{
-  background-color: var(--green2);
-  border-color: var(--green);
-  color: var(--green);
-}
-
-.btn-border-green{
-  background-color: var(--green2);
-  border: 0.5px solid var(--green);
-  border-radius: 5px;
-  color: var(--green);
-  cursor: pointer;
-  font-size: 12px;
-  height: 28px;
-  line-height: 28px;
-  padding: 0 8px;
-}
-
-.hr{
+.hr {
   border-bottom: 0.5px solid var(--light);
 }
 
-.App{
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-.navbar{
+.navbar {
   position: fixed;
   z-index: 1;
   display: flex;
@@ -148,52 +51,19 @@
   width: 100%;
   border-bottom: 0.5px solid var(--light);
 }
-.navbar-brand{
+.navbar-brand {
   color: var(--white);
   font-size: 24px;
   line-height: 36px;
   font-weight: 600;
   margin-left: 2rem;
 }
-.navbar-menu{
+.navbar-menu {
   cursor: pointer;
 }
-.navbar-menu-i{
+.navbar-menu-i {
   background-color: var(--white);
   width: 20px;
   height: 1px;
   margin-top: 5px;
-}
-
-.tooltip {
-  position: relative;
-}
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  top: 150%;
-  left: 40%;
-  margin-left: -60px;
-}
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 40%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent black transparent;
-}
-.tooltip:hover .tooltiptext {
-  visibility: visible;
 }

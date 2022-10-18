@@ -1,154 +1,155 @@
-.group{
-    color: var(--black);
+.group {
+  color: var(--black);
 }
 
-.dropdown{
-    position: relative;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 0.5rem;
-    padding: 15px;
-    justify-content: center;
-    align-items: center;
-    color: var(--gray);
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 0.5rem;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray);
 }
-.dropdown:hover{
-    color: var(--black2);
-    background-color: var(--light2);
-    border-radius: 5px;
+.dropdown:hover {
+  color: var(--black2);
+  background-color: var(--light2);
+  border-radius: 5px;
 }
-.arrow-down{
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    margin-left: -2px;
-    border-width: 6px;
-    border-style: solid;
-    border-color:  var(--gray) transparent transparent transparent;
+.arrow-down {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  margin-left: -2px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--gray) transparent transparent transparent;
 }
-.arrow-down:hover{
-    border-color:  var(--black) transparent transparent transparent;
+.arrow-down:hover {
+  border-color: var(--black) transparent transparent transparent;
 }
-.arrow-right{
-    position: absolute;
-    top: 30%;
-    left: 40%;
-    margin-left: 0px;
-    border-width: 6px;
-    border-style: solid;
-    border-color: transparent transparent transparent var(--gray);
+.arrow-right {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  margin-left: 0px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--gray);
 }
-.arrow-right:hover{
-    border-color: transparent transparent transparent var(--black);
-}
-
-.group-utilities{
-    display: none;
-}
-.group-header:hover .group-utilities{
-    display: flex;
+.arrow-right:hover {
+  border-color: transparent transparent transparent var(--black);
 }
 
-.group-tasks{
-    border-top: 0.5px solid var(--light);
+.group-utilities {
+  display: none;
+}
+.group-header:hover .group-utilities {
+  display: flex;
 }
 
-.task{
-    border-bottom: 0.5px solid var(--light);
-    padding: 0.25rem 0.5rem 0.25rem 4rem;
-    line-height: 26px;
-    position: relative;
-    align-items: center;
-}
-.task:hover{
-    background-color: var(--light3);
-    cursor: pointer;
-}
-.current .task{
-    background-color: var(--light-blue);
+.group-tasks {
+  border-top: 0.5px solid var(--light);
 }
 
-.task-tick{
-    border-radius: 30px;
-    font-size: 10px;
-    font-weight: 700;
-    width: 1rem;
-    height: 1rem;
-    text-align: center;
-    line-height: 18px;
+.task {
+  border-bottom: 0.5px solid var(--light);
+  padding: 0.25rem 0.5rem 0.25rem 4rem;
+  line-height: 26px;
+  /* position: relative; */
+  align-items: center;
 }
-.task-tick-incomplete{
-    color: var(--light);
-    border: 1px solid var(--light);
+.task:hover {
+  background-color: var(--light3);
+  cursor: pointer;
 }
-.task-tick-incomplete:hover{
-    color: var(--green);
-    border-color: var(--green);
-    cursor: pointer;
-}
-.task-tick-complete{
-    color: var(--white);
-    background-color: var(--green1);
-    border: 1px solid var(--green1);
-}
-.task-tick-complete:hover{
-    background-color: var(--green);
-    cursor: pointer;
+.current .task {
+  background-color: var(--light-blue);
 }
 
-.input-hover{
-    width: auto;
-    font-size: 16px;
-    line-height: 24px;
-    outline: none;
-    border: none;
-    padding: 0 0.5rem;
-    border: 1px solid transparent;
-    background-color: transparent;
+.task-tick {
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 700;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  line-height: 18px;
 }
-.task:hover .input-hover{
-    border: 1px solid var(--light);
-    border-radius: 3px;
-    background-color: var(--white);
+.task-tick-incomplete {
+  color: var(--light);
+  border: 1px solid var(--light);
 }
-
-.task-move{
-    position: relative;
-    padding: 6px 15px 2px 7px;
-    border-radius: 10px;
-    font-size: 12px;
-    color: transparent;
+.task-tick-incomplete:hover {
+  color: var(--green);
+  border-color: var(--green);
+  cursor: pointer;
 }
-.task-move-i{
-    position: absolute;
-    top: 0;
-    right: 10px;
+.task-tick-complete {
+  color: var(--white);
+  background-color: var(--green1);
+  border: 1px solid var(--green1);
 }
-.task:hover .task-move, .current .task-move{
-    color: var(--black);
-}
-.task-move:hover{
-    background-color: var(--light2);
+.task-tick-complete:hover {
+  background-color: var(--green);
+  cursor: pointer;
 }
 
-.task-btn-details{
-    color: transparent;
-    padding: 0 0.5rem ;
-    border-radius: 15px;
+.input-hover {
+  width: auto;
+  font-size: 16px;
+  line-height: 24px;
+  outline: none;
+  border: none;
+  padding: 0 0.5rem;
+  border: 1px solid transparent;
+  background-color: transparent;
 }
-.task:hover .task-btn-details, .current .task-btn-details{
-    color: var(--black);
-}
-.task-btn-details:hover{
-    background-color: var(--light2);
-}
-.arrow-stretched{
-    font-size:24px;
-    transform: scale(.4, 1);
-    padding-bottom: 2px;
-}
-
-.task-add{
-    border: none;
+.task:hover .input-hover {
+  border: 1px solid var(--light);
+  border-radius: 3px;
+  background-color: var(--white);
 }
 
+.task-move {
+  position: relative;
+  padding: 6px 15px 2px 7px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: transparent;
+}
+.task-move-i {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+.task:hover .task-move,
+.current .task-move {
+  color: var(--black);
+}
+.task-move:hover {
+  background-color: var(--light2);
+}
+
+.task-btn-details {
+  color: transparent;
+  padding: 0 0.5rem;
+  border-radius: 15px;
+}
+.task:hover .task-btn-details,
+.current .task-btn-details {
+  color: var(--black);
+}
+.task-btn-details:hover {
+  background-color: var(--light2);
+}
+.arrow-stretched {
+  font-size: 24px;
+  transform: scale(0.4, 1);
+  padding-bottom: 2px;
+}
+
+.task-add {
+  border: none;
+}
