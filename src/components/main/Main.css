@@ -1,11 +1,15 @@
-.main{
-    padding-top: 3rem;
-    position: relative;
-    min-height: 95vh;
+.main {
+  padding-top: 3rem;
+  position: relative;
+  min-height: 95vh;
 }
 
-.project-tasks{
-    flex: 1;
-    padding-top: 1.5rem;
-    overflow: scroll;
+.project-tasks {
+  flex: 1;
+  padding-top: 1.5rem;
+  overflow: scroll;
+}
+
+.main .task-add {
+  margin-left: -2rem;
 }

@@ -13,7 +13,8 @@ function App() {
   };
 
   useEffect(() => {
-    fetchProjects().then((res) => setProjects(res));
+    // fetchProjects().then((res) => setProjects(res));
+    refresh();
   }, []);
 
   return (

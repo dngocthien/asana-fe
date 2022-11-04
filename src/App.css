@@ -1,6 +1,7 @@
 @import url("./vars.css");
 @import "./assets/styles/button.css";
 @import "./assets/styles/input.css";
+@import "./assets/styles/txt.css";
 @import "./assets/styles/space.css";
 @import "./assets/styles/tooltip.css";
 
@@ -25,11 +26,6 @@
 }
 .full {
   flex: 1;
-}
-
-.txt-gray {
-  color: var(--gray);
-  font-size: 14px;
 }
 
 .hr {

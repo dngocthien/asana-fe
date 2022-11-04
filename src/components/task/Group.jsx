@@ -1,21 +1,30 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { putGroup } from "../../api/groups";
 import Task from "./Task";
 import "./Task.css";
 
 const Group = ({ group }) => {
+  console.log(group);
   const dispatch = useDispatch();
   const [down, setDown] = useState(true);
-  const [add, setAdd] = useState(false);
+  const [isNameFocused, setIsNameFocused] = useState(false);
+  const [isAdd, setIsAdd] = useState(false);
+  const [name, setName] = useState(group.name);
   const newTask = {
     id: null,
     name: "",
     complete: false,
-    group: group.id,
+    groupIdList: [group.id],
+  };
+
+  const updateGroup = (e) => {
+    group.name = name;
+    putGroup(group, group.id);
   };
 
   const cancel = () => {
-    setAdd(false);
+    setIsAdd(false);
   };
   return (
     <div className="group">
@@ -28,32 +37,65 @@ const Group = ({ group }) => {
           )}
         </div>
 
-        <h3 className="mr-1">{group.title}</h3>
+        <div
+          onClick={() => setIsNameFocused(true)}
+          onBlur={() => setIsNameFocused(false)}
+        >
+          {isNameFocused ? (
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoFocus
+              className="input-click_focus"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  updateGroup();
+                }
+              }}
+            />
+          ) : (
+            <div className="input-click">
+              {group.name === "" ? "Untitled Section" : group.name}
+            </div>
+          )}
+        </div>
 
         <div className="group-utilities flex">
-          <button className="btn-symbol mr-1">+</button>
-          <button className="btn-symbol">
+          <button className="btn-symbol ml-1" onClick={() => setIsAdd(!isAdd)}>
+            +
+          </button>
+          <button className="btn-symbol ml-1">
             <div className="pb-0">&#8230;</div>
           </button>
         </div>
       </div>
 
-      {down && (
+      {isAdd && (
+        <Task
+          setIsAdd={setIsAdd}
+          task={newTask}
+          focus={true}
+          cancelAdd={() => cancel()}
+        />
+      )}
+
+      {down && group.taskList.length > 0 && (
         <div className="group-tasks">
-          {group.tasks.map((t, i) => {
+          {group.taskList.map((t, i) => {
             return (
               <Task key={i} task={t} focus={false} cancelAdd={() => cancel()} />
             );
           })}
 
-          {add && (
+          {/* {isAdd && (
             <Task task={newTask} focus={true} cancelAdd={() => cancel()} />
-          )}
+          )} */}
 
           <div
             className="task task-add"
             onClick={() => (
-              setAdd(!add), dispatch({ type: "CURRENT", current: null })
+              setIsAdd(!isAdd), dispatch({ type: "CURRENT", current: null })
             )}
           >
             <div className="txt-gray ml-2 py-q">Add task...</div>

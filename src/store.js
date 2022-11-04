@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 
 const reducer = (
-  state = { project: null, task: null, details: false },
+  state = { project: { id: 0, groupList: [] }, task: null, details: false },
   action
 ) => {
   switch (action.type) {

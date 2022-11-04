@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import "./SideBar.css";
-import { deleteProject, saveProject } from "../../api/projects";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { deleteProject, postProject } from "../../api/projects";
+import { useDispatch, useSelector } from "react-redux";
 
 const SideBar = ({ projects, refresh }) => {
   const [isShowAddProject, setIsShowAddProject] = useState(false);
   const [setting, setSetting] = useState(null);
   const [name, setName] = useState("");
-  const project = useSelector((state) => state.project);
+  const project = useSelector((state) => state.project) || { id: 0 };
+
+  const dispatch = useDispatch();
 
   const addProject = () => {
     setIsShowAddProject(false);
-    saveProject({ name: name }).then(() => refresh());
+    postProject({ name: name }).then(() => refresh());
   };
 
   const removeProject = (id) => {
@@ -21,7 +22,7 @@ const SideBar = ({ projects, refresh }) => {
   };
 
   return (
-    <div className="sidebar">
+    <div className="sidebar" onBlur={() => setSetting(-1)}>
       <div className="sidebar-header space-between">
         <p>My Workspace</p>
         <button
@@ -34,13 +35,21 @@ const SideBar = ({ projects, refresh }) => {
 
       {projects.map((p, i) => {
         return (
-          <div key={i} className="project space-between">
+          <div
+            key={i}
+            className={
+              project.id === p.id
+                ? "project project-focus space-between"
+                : "project space-between"
+            }
+            onClick={() => dispatch({ type: "PROJECT", project: p })}
+          >
             <div className="flex">
               <div className="project-dot" />
               <div>{p.name}</div>
             </div>
             <div className="btn-transparent relative">
-              <div className="pb-1" onClick={() => setSetting(i)}>
+              <div className="pb-1" tabIndex={0} onFocus={() => setSetting(i)}>
                 ...
               </div>
               {setting === i && (

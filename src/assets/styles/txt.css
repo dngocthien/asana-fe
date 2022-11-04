@@ -1,0 +1,8 @@
+.txt-bold {
+  font-weight: 700;
+}
+
+.txt-gray {
+  color: var(--gray);
+  font-size: 14px;
+}

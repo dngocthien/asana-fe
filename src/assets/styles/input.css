@@ -1,3 +1,39 @@
+.input-click {
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  min-height: 0;
+  padding: 12px;
+  margin-bottom: 0.25rem;
+}
+.input-click_focus {
+  border: 3px solid var(--blue);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  min-height: 0;
+  padding: 6px;
+  margin-bottom: 0.25rem;
+  width: 13rem;
+}
+
+.input-focus {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  min-height: 0;
+  padding: 6px;
+  width: 100%;
+  flex: 1;
+}
+.input-focus:hover {
+  border: 1px solid var(--gray);
+}
+
 .symbol-input {
   border: 3px solid var(--blue);
   border-radius: 5px;

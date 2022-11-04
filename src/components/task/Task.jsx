@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { postTask } from "../../api/tasks";
 import "./Task.css";
 
 const Task = (props) => {
   const task = props.task;
+  // console.log(task);
   const dispatch = useDispatch();
   const [name, setName] = useState(task.name);
   const current = useSelector((state) => state.current);
 
   //if null then remove, else add new task
   const checkTask = () => {
-    if (name == "") {
+    if (name === "") {
       props.cancelAdd();
     }
+    task.name = name;
+    postTask(task);
+    props.cancelAdd();
   };
 
   const goDetails = () => {
@@ -44,9 +49,18 @@ const Task = (props) => {
               }}
               defaultValue={task.name}
               autoFocus={props.focus}
-              onBlur={() => checkTask()}
               placeholder="Write a task name"
+              onBlur={(e) => {
+                if (e.target.value == "") {
+                  props.setIsAdd(false);
+                }
+              }}
               onChange={(e) => setName(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  checkTask();
+                }
+              }}
             />
           </div>
         </div>

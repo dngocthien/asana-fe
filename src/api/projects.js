@@ -5,7 +5,7 @@ export const fetchProjects = async () => {
   return await json.json();
 };
 
-export const saveProject = async (project) => {
+export const postProject = async (project) => {
   const json = await fetch(DB_URL + "projects", {
     method: "post",
     headers: { "Content-Type": "application/json" },

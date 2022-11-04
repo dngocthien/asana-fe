@@ -23,6 +23,9 @@
 .project:hover {
   background-color: var(--black3);
 }
+.project-focus {
+  background-color: var(--gray);
+}
 .project input:focus {
   outline-width: 0;
 }

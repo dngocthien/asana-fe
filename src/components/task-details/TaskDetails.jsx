@@ -26,6 +26,8 @@ const TaskDetails = () => {
         <input
           type="text"
           placeholder="Name or email"
+          autoFocus
+          onBlur={() => setInputAssignee(false)}
           // onChange={() =>
           //   setSearchQuery(document.getElementById("searching1").value)
           // }
@@ -63,11 +65,7 @@ const TaskDetails = () => {
 
       <div className="details-container">
         <div className="flex">
-          <input
-            type="text"
-            className="details-name"
-            defaultValue={task.name}
-          />
+          <input type="text" className="input-focus" defaultValue={task.name} />
         </div>
 
         <table>
