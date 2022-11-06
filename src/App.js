@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchProjects } from "./api/projects";
-import "./App.css";
+import "./App.scss";
 import Main from "./components/main/Main";
 import SideBar from "./components/sidebar/SideBar";
 
@@ -13,7 +13,6 @@ function App() {
   };
 
   useEffect(() => {
-    // fetchProjects().then((res) => setProjects(res));
     refresh();
   }, []);
 

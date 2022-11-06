@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postTask } from "../../api/tasks";
-import "./Task.css";
+import { postTask, putTask } from "../../api/tasks";
+import "./Task.scss";
 
 const Task = (props) => {
   const task = props.task;
@@ -16,7 +16,11 @@ const Task = (props) => {
       props.cancelAdd();
     }
     task.name = name;
-    postTask(task);
+    if (task.id == null) {
+      postTask(task);
+    } else {
+      putTask(task, task.id);
+    }
     props.cancelAdd();
   };
 
@@ -45,13 +49,14 @@ const Task = (props) => {
             <input
               className="input-hover"
               style={{
-                width: (name.length == 0 ? 135 : (name.length + 1) * 7) + "px",
+                width:
+                  (name.length === 0 ? 135 : (name.length + 1) * 7.5) + "px",
               }}
               defaultValue={task.name}
               autoFocus={props.focus}
               placeholder="Write a task name"
               onBlur={(e) => {
-                if (e.target.value == "") {
+                if (e.target.value === "") {
                   props.setIsAdd(false);
                 }
               }}

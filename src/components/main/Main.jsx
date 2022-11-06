@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Group from "../task/Group";
 import TaskDetails from "../task-details/TaskDetails";
-import "./Main.css";
-import project1 from "../../data";
+import "./Main.scss";
 import { useSelector } from "react-redux";
 import Task from "../task/Task";
 import { fetchGroupsByProjectId, postGroup } from "../../api/groups";
@@ -22,12 +21,11 @@ const Main = () => {
 
   const addGroup = () => {
     const group = { name: "", projectId: project.id };
-    postGroup(group);
+    postGroup(group).then((res) => refresh());
   };
 
   const refresh = () => {
     fetchGroupsByProjectId(project.id).then((res) => setGroups(res));
-    console.log(groups);
   };
 
   useEffect(() => {

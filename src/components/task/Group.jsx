@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { putGroup } from "../../api/groups";
 import Task from "./Task";
-import "./Task.css";
+import "./Task.scss";
 
 const Group = ({ group }) => {
-  console.log(group);
+  // console.log(group);
   const dispatch = useDispatch();
   const [down, setDown] = useState(true);
   const [isNameFocused, setIsNameFocused] = useState(false);
@@ -20,12 +21,18 @@ const Group = ({ group }) => {
 
   const updateGroup = (e) => {
     group.name = name;
-    putGroup(group, group.id);
+    putGroup(group, group.id).then((res) => setIsNameFocused(false));
   };
 
   const cancel = () => {
     setIsAdd(false);
   };
+
+  useEffect(() => {
+    if (group.name === "") {
+      setIsNameFocused(true);
+    }
+  }, []);
   return (
     <div className="group">
       <div className="group-header flex pl-2">
@@ -71,7 +78,7 @@ const Group = ({ group }) => {
         </div>
       </div>
 
-      {isAdd && (
+      {isAdd && group.taskList.length === 0 && (
         <Task
           setIsAdd={setIsAdd}
           task={newTask}
@@ -88,9 +95,14 @@ const Group = ({ group }) => {
             );
           })}
 
-          {/* {isAdd && (
-            <Task task={newTask} focus={true} cancelAdd={() => cancel()} />
-          )} */}
+          {isAdd && (
+            <Task
+              setIsAdd={setIsAdd}
+              task={newTask}
+              focus={true}
+              cancelAdd={() => cancel()}
+            />
+          )}
 
           <div
             className="task task-add"

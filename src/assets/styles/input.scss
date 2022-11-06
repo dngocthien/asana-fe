@@ -29,9 +29,9 @@
   padding: 6px;
   width: 100%;
   flex: 1;
-}
-.input-focus:hover {
-  border: 1px solid var(--gray);
+  &:hover {
+    border: 1px solid var(--gray);
+  }
 }
 
 .symbol-input {
@@ -41,20 +41,20 @@
   height: 2.5rem;
   align-items: center;
   display: flex;
-}
-.symbol-input input:focus {
-  outline-width: 0;
-}
-.symbol-input input {
-  display: flex;
-  border: none;
-  margin-left: 0.5rem;
-  width: 14rem;
-}
-.symbol-input img {
-  border: 1px dashed var(--gray);
-  border-radius: 30px;
-  width: 23px;
-  height: 23px;
-  margin-left: 0.5rem;
+  input {
+    display: flex;
+    border: none;
+    margin-left: 0.5rem;
+    width: 14rem;
+    &:focus {
+      outline-width: 0;
+    }
+  }
+  img {
+    border: 1px dashed var(--gray);
+    border-radius: 30px;
+    width: 23px;
+    height: 23px;
+    margin-left: 0.5rem;
+  }
 }

@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 
 const reducer = (
-  state = { project: { id: 0, groupList: [] }, task: null, details: false },
+  state = { project: { id: 0, groupList: [] }, current: null, details: false },
   action
 ) => {
   switch (action.type) {
@@ -14,7 +14,7 @@ const reducer = (
     case "CURRENT":
       return {
         project: state.project,
-        task: action.task,
+        task: action.current,
         details: state.details,
       };
     case "DETAILS":

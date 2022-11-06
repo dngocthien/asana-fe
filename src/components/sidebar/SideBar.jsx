@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SideBar.css";
+import "./SideBar.scss";
 import { deleteProject, postProject } from "../../api/projects";
 import { useDispatch, useSelector } from "react-redux";
 

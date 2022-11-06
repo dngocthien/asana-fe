@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import project1 from "../../data";
 import dayjs from "dayjs";
 import icon_user from "../../assets/images/user.svg";
 import icon_calendar from "../../assets/images/calendar.svg";
-import "./TaskDetails.css";
+import "./TaskDetails.scss";
+import { useEffect } from "react";
 
 const TaskDetails = () => {
   const dispatch = useDispatch();
-  const [task, setTask] = useState(project1[0].tasks[0]);
-  const [nothing, setNothing] = useState(false);
+  const task = useSelector((state) => state.current);
+  console.log(task);
   const [inputAssignee, setInputAssignee] = useState(false);
 
-  const updateState = () => {
-    const existing = task;
-    existing.complete = !existing.complete;
-    setTask(existing);
-    setNothing(!nothing);
-  };
+  const updateState = () => {};
+
+  useEffect(() => {
+    updateState();
+  }, []);
 
   const assigneeInput = () => {
     return (
@@ -28,13 +28,9 @@ const TaskDetails = () => {
           placeholder="Name or email"
           autoFocus
           onBlur={() => setInputAssignee(false)}
-          // onChange={() =>
-          //   setSearchQuery(document.getElementById("searching1").value)
-          // }
           onKeyPress={(event) => {
             if (event.key === "Enter") {
               setInputAssignee(false);
-              // onSeach();
             }
           }}
         />
@@ -44,15 +40,13 @@ const TaskDetails = () => {
   return (
     <div className="details">
       <div className="details-header space-between">
-        {/* btn:complete */}
         <button
-          className={task.complete ? "btn-border-green" : "btn-border"}
+          className={false ? "btn-border-green" : "btn-border"}
           onClick={() => updateState()}
         >
           &#10003; complete
         </button>
 
-        {/* btn:close_details */}
         <button
           className="btn-symbol"
           onClick={() => dispatch({ type: "DETAILS", details: false })}
@@ -65,7 +59,12 @@ const TaskDetails = () => {
 
       <div className="details-container">
         <div className="flex">
-          <input type="text" className="input-focus" defaultValue={task.name} />
+          <input
+            type="text"
+            className="input-focus"
+            defaultValue="default name"
+          />
+          {/* <input type="text" className="input-focus" defaultValue={task.name} /> */}
         </div>
 
         <table>
